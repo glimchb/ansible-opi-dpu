@@ -129,7 +129,7 @@ Parameters
 
       .. ansible-option-type-line::
 
-        :ansible-option-type:`string`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
 
 

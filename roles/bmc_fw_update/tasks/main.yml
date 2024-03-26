@@ -7,6 +7,12 @@
 - name: Get Firmware Inventory
   ansible.builtin.include_role:
     name: get_bmc_facts
+  vars:
+    params:
+      hostname: "{{ inventory_hostname }}"
+      username: "{{ dpu_bmc_username }}"
+      password: "{{ dpu_bmc_password }}"
+      auth_token: "{{ dpu_bmc_token }}"
   register: get_bmc_facts_before
 
 - name: Store current fw version
@@ -85,6 +91,12 @@
 - name: Get Firmware Inventory
   ansible.builtin.include_role:
     name: get_bmc_facts
+  vars:
+    params:
+      hostname: "{{ inventory_hostname }}"
+      username: "{{ dpu_bmc_username }}"
+      password: "{{ dpu_bmc_password }}"
+      auth_token: "{{ dpu_bmc_token }}"
   register: get_bmc_facts_after
 
 - name: Print BMC Version
